@@ -1,92 +1,63 @@
-# Masal Sandığı: Anadolu'dan Hikâyeler
+# Masal Sandığı – Anadolu'dan Hikâyeler
 
-**İstanbul Medipol Üniversitesi · Görsel İletişim Tasarımı · Programlamaya Giriş**
+Merhaba, ben Allanazar Ashyrjumayev. Bu projeyi Programlamaya Giriş dersinde hazırladım. Türk masallarını bir araya getirip sade, kolay okunabilen bir web sayfası oluşturmak istedim. Sitede sekiz masal bulunuyor. Her masalın ayrı kapak resmi var ve kullanıcılar istedikleri masalı seçip okuyabiliyor.
 
-Anadolu masallarını çocuklara uygun bir arayüzde sunan, **8 masallık bir web sitesi**. İlk vize sürümünde bütün kod `index.html` içinde bulunuyordu. **“External CSS ve JS ile Projenizi Yapılandırma” ödevi** kapsamında CSS ve JavaScript kodlarını ayrı dosyalara taşıdık. Sitenin tasarımı ve özellikleri korundu.
+## Yeni ödevde ne yaptım?
 
-## Proje dosyaları
+Vize projemde HTML, CSS ve JavaScript kodlarının hepsi `index.html` dosyasının içindeydi. Hocamızın yeni yönergesinde bunları **üç farklı dosyaya ayırmamız** istendi.
 
-```text
-T-rk-masallar-derlemesi/
-├── index.html       # Sayfanın HTML iskeleti
-├── style.css        # Harici CSS: tasarım, kartlar, mobil uyum
-├── script.js        # Harici JavaScript: masallar ve etkileşimler
-├── README.md        # Projeyi tanıtan bu dosya
-├── main.tex         # Önceki vize raporunun LaTeX kaynak dosyası
-└── 86230057_Allanazar_Ashyrjumayev_ProgramlamayaGiriş_Güz_Vize.pdf  # Önceki vize raporunun PDF'i
-```
+Bunun için sayfanın HTML kısmını `index.html` içinde bıraktım. Renkleri, yazı tiplerini ve sayfanın görünümünü düzenleyen kodları `style.css` dosyasına; arama, masal açma ve diğer düğmelerin çalışmasını sağlayan kodları da `script.js` dosyasına taşıdım. Böylece kodları daha düzenli bir şekilde incelemek mümkün oldu.
 
-**Bu ödevin temel üçlü dosyası:** `index.html`, `style.css` ve `script.js`. Bu üçü aynı klasörde tutulmalıdır. Masalların kapakları SVG veri adresleri biçiminde kod içine gömülüdür; web sitesi için ayrıca resim klasörü gerekli değildir.
+## Projenin üç ana dosyası
 
-## Nasıl çalıştırılır?
+- **index.html:** Sayfanın başlıkları, menüsü, masal kartlarının bulunduğu alan ve okuma penceresinin HTML yapısı.
+- **style.css:** Sayfanın renkleri, yazı tipleri, kartların görünümü ve telefona uygun yerleşim.
+- **script.js:** Masalların bilgileri, arama kutusu, filtreler, favoriler, okundu işareti ve okuma penceresinin çalışması.
 
-1. GitHub sayfasındaki **Code → Download ZIP** seçeneğinden depoyu indirin.
-2. ZIP dosyasını bir klasöre çıkarın.
-3. `index.html`, `style.css` ve `script.js` dosyalarının **aynı klasörde** olduğundan emin olun.
-4. `index.html` dosyasını Chrome, Edge, Firefox veya Safari gibi bir tarayıcıda açın.
+Ayrıca şu an okuduğun **README.md** dosyası projenin açıklaması için var. Depoda önceki vize çalışmama ait **PDF raporu** ve **main.tex** dosyası da bulunuyor. Bunlar üç ana kod dosyasından ayrı.
 
-Web sitesinin masallarını okumak için internet bağlantısı gerekmez; ancak üç dosyanın da birlikte indirilmiş olması gerekir. Kaynak bağlantılarına gitmek için internet kullanılır. GitHub'ın kod önizleme sayfası web sitesini çalıştırmaz; indirilmiş HTML dosyasını tarayıcıda açın.
-
-## Harici CSS ve JavaScript bağlantıları
-
-`index.html` dosyasının `<head>` bölümünde CSS şöyle bağlanır:
+HTML dosyasında CSS ve JavaScript bağlantılarını şu şekilde kullandım:
 
 ```html
 <link rel="stylesheet" href="style.css">
-```
-
-HTML'in sonunda JavaScript şu şekilde bağlanır:
-
-```html
 <script src="script.js" defer></script>
 ```
 
-- **HTML:** Başlık, menü, masal arşivi, kaynakça ve okuma penceresinin yapısını oluşturur.
-- **CSS:** Kâğıt tonları, Georgia başlıkları, kart düzeni, düğmeler ve `@media` ile ekran boyutuna uyarlamayı yönetir.
-- **JavaScript:** Masal verilerini işler; filtreleme, arama, favoriler, okundu durumu ve okuma penceresini çalıştırır.
-- `defer` sayesinde betik, HTML ayrıştırıldıktan sonra çalıştırılır.
+İlk satır CSS dosyasını, ikinci satır JavaScript dosyasını sayfaya bağlıyor.
 
-## Web sitesinin özellikleri
+## Projeyi nasıl açabilirsiniz?
 
-- **Sekiz masal:** Dört Öğüt, Değirmenci ile Tilki, Fatmacık ile Yusufçuk, Keloğlan ve Altın Bülbül, Tuz Kadar Sevgi, Üç Turunçlar, Nardaniye Hanım ve Keloğlan Masalı (Bir Nohut).
-- **Arama:** Masal adında, açıklamasında, türünde ve hikâye metninde arama.
-- **Filtreleme:** Tümü, türler, Favorilerim ve Okuduklarım.
-- **Okuma penceresi:** Masal kapağı ve tam metni, önceki/sonraki masal, yazı boyutu değiştirme.
-- **Favoriler ve okundu kaydı:** Tarayıcının `localStorage` alanını kullanır. Bazı dosya önizleyicilerinde veya özel gizlilik ayarlarında kayıt kalıcı olmayabilir.
-- **Rastgele masal:** Tek tuşla sekiz hikâyeden birini açar.
-- **Duyarlı tasarım:** Geniş ekranda çok sütunlu, dar ekranda iki veya tek sütunlu kart yerleşimi.
-- **JavaScript kapalıyken okuma:** HTML'deki `<details>` ve `<summary>` öğelerinde sekiz masalın metnine ulaşılabilir.
-- **Kapak çizimleri:** Sekiz ayrı SVG illüstrasyonu; hazır stok görsel kullanılmadı.
+1. GitHub sayfasında **Code > Download ZIP** seçeneğine tıklayıp projeyi indirin.
+2. ZIP dosyasını bilgisayarınızda bir klasöre çıkarın.
+3. `index.html`, `style.css` ve `script.js` dosyalarının aynı klasörde olduğundan emin olun.
+4. `index.html` dosyasına çift tıklayıp bir internet tarayıcısında açın.
 
-## Kodun genel mantığı
+Masal metinleri ve kapak resimleri dosyalarda kayıtlı olduğu için internet olmadan da okunabiliyor. Kaynak bağlantılarını açmak için ise internet gerekiyor.
 
-`script.js` içinde `stories` dizisi masal bilgilerini tutar. `visibleStories()` arama ve kategori koşullarına göre listeyi süzer. `renderCards()` süzülmüş masalları kart hâlinde ekrana yerleştirir. `openStory()` ve `showStory()` seçilen hikâyeyi okuma penceresinde gösterir. `setFlag()` ve `persist()` favori/okundu bilgilerini günceller ve kaydetmeye çalışır.
+## Sitede neler var?
 
-Harici dosyalara ayırma sırasında bu temel işlevler yeniden yazılmadı; daha önce tek HTML içinde bulunan stil ve betikler, bağlantıları değiştirilerek ayrı dosyalara taşındı.
+Sitede sekiz Türk masalı bulunuyor: Dört Öğüt, Değirmenci ile Tilki, Fatmacık ile Yusufçuk, Keloğlan ve Altın Bülbül, Tuz Kadar Sevgi, Üç Turunçlar, Nardaniye Hanım ve Keloğlan Masalı (Bir Nohut).
 
-## Rapor ve önceki vize çalışması
+Masalları arama kutusundan bulmak, türüne göre seçmek, favorilere eklemek ve okundu olarak işaretlemek mümkün. Ayrıca rastgele masal seçme düğmesi ve okuma sırasında yazıyı büyütüp küçültme seçenekleri var.
 
-Depoda önceki vize çalışmasına ait PDF ve `main.tex` de tutulmaktadır. **Bu yeni ödev**, önceki PDF'yi değiştirmekten çok web sitesini üç dosyaya ayırmaya yöneliktir. PDF'de eski *içsel CSS/JS* düzeni anlatıldığı için yeni dosya yapısını görmek isteyenler bu README'yi ve `index.html` içindeki harici dosya bağlantılarını esas almalıdır.
+## Kodun çalışma mantığı
 
-**Not:** `main.tex` içinde önceki rapora ait bazı ekran görüntülerine `assets/` yollarıyla başvurulur. Bu görüntüler olmadan kaynak dosyayı doğrudan yeniden derlemek mümkün olmayabilir; PDF raporunun kendisi depoda yer almaktadır.
+`script.js` dosyasında masallar `stories` adlı bir dizide tutuluyor. `visibleStories()` arama ve filtreye uygun masalları buluyor. `renderCards()` bunları sayfada kart olarak gösteriyor. Kullanıcı bir masala bastığında `openStory()` ve `showStory()` hikâyeyi açıyor.
 
-## Kullanılan teknolojiler
+Favoriler ve okundu işaretleri tarayıcının `localStorage` alanına kaydedilmeye çalışılıyor. Böylece üyelik oluşturmadan bu işaretler saklanabiliyor. `style.css` içindeki `@media` kuralları da sayfanın telefon ve bilgisayar ekranlarında farklı şekilde yerleşmesini sağlıyor.
 
-HTML5, CSS3, JavaScript (ES6+), SVG veri adresleri ve tarayıcı `localStorage`. Harici çatı (framework), hazır CSS kütüphanesi veya çevrimiçi API kullanılmıyor.
+Bu ödevde amacım sitenin özelliklerini değiştirmek değil, aynı projeyi hocamızın istediği gibi **harici CSS ve JavaScript dosyalarıyla** çalışır duruma getirmekti.
 
-## Kaynak ve yapay zekâ açıklaması
+## Masalların kaynakları
 
-Masallar geleneksel anlatılardan yararlanılarak çocuklara uygun biçimde **yeniden anlatılmıştır**; kaynak sayfalardaki tam metinlerin birebir kopyası değildir. Kaynak bağlantıları web sitesinin **Kaynaklar** bölümünde ve vize raporunda bulunur.
+Masalların kaynak bağlantılarını web sitesinin **Kaynaklar** bölümüne ve önceki vize raporuna ekledim. Sitedeki metinler geleneksel masalların çocuklar için sadeleştirilmiş uyarlamalarıdır.
 
-ChatGPT; HTML/CSS/JavaScript oluşturma ve düzenleme, kodları harici dosyalara ayırma, etkileşimleri kontrol etme, masal anlatılarını genişletme, SVG kapak taslakları ve rapor/README düzenleme aşamalarında kullanılmıştır. Projenin sunumunda kodların çalışma mantığını açıklamak ve son kullanıcı kontrolü proje sahibinin sorumluluğundadır.
+## Bağlantı
 
-## Bağlantılar
+**GitHub deposu:** https://github.com/ashyrjumayevallanazar-art/T-rk-masallar-derlemesi
 
-- **GitHub:** https://github.com/ashyrjumayevallanazar-art/T-rk-masallar-derlemesi
-- **YouTube sunumu:** Henüz eklenmedi; video hazırlandıktan sonra bağlantı eklenecek.
+**Hazırlayan:** Allanazar Ashyrjumayev  
+**Öğrenci numarası:** 86230057  
+**Ders:** Programlamaya Giriş
 
----
-
-**Hazırlayan:** Allanazar Ashyrjumayev · **Öğrenci no:** 86230057
-
-**Yeni ödev teslimi:** GitHub deposu bağlantısını ilgili assignment alanına ayrıca eklemek gerekiyor.
+*Not: Depodaki PDF raporu önceki vize çalışmasına aittir. O raporda kodlar tek HTML dosyasındaydı. Bu yeni ödevde ise kodlar üç dosyaya ayrıldı.*
