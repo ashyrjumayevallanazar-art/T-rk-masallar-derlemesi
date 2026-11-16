@@ -57,7 +57,6 @@ Masalların kaynak bağlantılarını web sitesinin **Kaynaklar** bölümüne ve
 **GitHub deposu:** https://github.com/ashyrjumayevallanazar-art/T-rk-masallar-derlemesi
 
 **Hazırlayan:** Allanazar Ashyrjumayev  
-**Öğrenci numarası:** 86230057  
+**Öğrenci no:** 86230057  
 **Ders:** Programlamaya Giriş
 
-*Not: Depodaki PDF raporu önceki vize çalışmasına aittir. O raporda kodlar tek HTML dosyasındaydı. Bu yeni ödevde ise kodlar üç dosyaya ayrıldı.*
