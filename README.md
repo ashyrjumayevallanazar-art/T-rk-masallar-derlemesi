@@ -1,51 +1,92 @@
 # Masal Sandığı: Anadolu'dan Hikâyeler
 
-**Programlamaya Giriş – Türk Masalları Derlemesi Web Sayfası (vize çalışması)**
+**İstanbul Medipol Üniversitesi · Görsel İletişim Tasarımı · Programlamaya Giriş**
 
-Bu çalışma, Türk masallarından seçilmiş **8 çocuklara uygun masal uyarlamasını** tek bir web sayfasında bir araya getirir. Tasarımda eski bir masal kitabının sade renkleri kullanılmıştır. Masalları aramak, türe göre süzmek, okumak, favorilere eklemek ve okundu olarak işaretlemek mümkündür.
+Anadolu masallarını çocuklara uygun bir arayüzde sunan, **8 masallık bir web sitesi**. İlk vize sürümünde bütün kod `index.html` içinde bulunuyordu. **“External CSS ve JS ile Projenizi Yapılandırma” ödevi** kapsamında CSS ve JavaScript kodlarını ayrı dosyalara taşıdık. Sitenin tasarımı ve özellikleri korundu.
 
-## Nasıl açılır?
+## Proje dosyaları
 
-1. `index.html` dosyasını bilgisayarınıza indirin.
-2. Dosyaya çift tıklayıp bir tarayıcıda açın.
-3. Masalları okumak için internet bağlantısı gerekmez. Kaynakça bağlantıları başka sitelere yönlendirdiğinden onları açmak için internet gerekir.
+```text
+T-rk-masallar-derlemesi/
+├── index.html       # Sayfanın HTML iskeleti
+├── style.css        # Harici CSS: tasarım, kartlar, mobil uyum
+├── script.js        # Harici JavaScript: masallar ve etkileşimler
+├── README.md        # Projeyi tanıtan bu dosya
+├── main.tex         # Önceki vize raporunun LaTeX kaynak dosyası
+└── 86230057_Allanazar_Ashyrjumayev_ProgramlamayaGiriş_Güz_Vize.pdf  # Önceki vize raporunun PDF'i
+```
 
-**Telefonda açarken:** iPhone Dosyalar uygulamasındaki bazı HTML önizlemeleri JavaScript çalıştırmayabilir. Bu durumda masalların tamamı başlığına dokunarak açılabilen yedek bir listede de bulunur. Arama, favoriler ve okuma penceresi için dosyayı Safari/Chrome tarayıcısında veya GitHub Pages bağlantısı üzerinden açın. ZIP içinden önizlemek yerine `index.html` dosyasını çıkarıp açın.
+**Bu ödevin temel üçlü dosyası:** `index.html`, `style.css` ve `script.js`. Bu üçü aynı klasörde tutulmalıdır. Masalların kapakları SVG veri adresleri biçiminde kod içine gömülüdür; web sitesi için ayrıca resim klasörü gerekli değildir.
 
-## Teknik özellikler
+## Nasıl çalıştırılır?
 
-- Tek HTML dosyası (`index.html`)
-- `<style>` içinde içsel CSS, `<script>` içinde içsel JavaScript
-- Harici JS/CSS kütüphanesi, hazır şablon veya indirilen stok görsel kullanılmadı
-- Arama, tür filtresi, rastgele seçim, favoriler, okundu kaydı, yazı boyutu ayarı
-- `localStorage` kullanılarak aynı tarayıcıdaki kayıtların saklanması
-- Farklı ekran genişliklerine göre değişen kart yerleşimi
-- JavaScript kapalıysa da okunabilen, HTML içinde kayıtlı sekiz masallık yedek görünüm
-- Her masala ayrı, çocuk kitabı tarzında SVG resimli kapak (HTML dosyasına gömülü; internet gerektirmez)
-- 365–550 kelimelik, kaynaklardaki olaylara dayanarak yeniden kurgulanmış hikâyeler
+1. GitHub sayfasındaki **Code → Download ZIP** seçeneğinden depoyu indirin.
+2. ZIP dosyasını bir klasöre çıkarın.
+3. `index.html`, `style.css` ve `script.js` dosyalarının **aynı klasörde** olduğundan emin olun.
+4. `index.html` dosyasını Chrome, Edge, Firefox veya Safari gibi bir tarayıcıda açın.
 
-## Rapor
+Web sitesinin masallarını okumak için internet bağlantısı gerekmez; ancak üç dosyanın da birlikte indirilmiş olması gerekir. Kaynak bağlantılarına gitmek için internet kullanılır. GitHub'ın kod önizleme sayfası web sitesini çalıştırmaz; indirilmiş HTML dosyasını tarayıcıda açın.
 
-`main.tex`, dersin sağladığı LaTeX rapor şablonunun bölüm sırasını koruyan çalışma dosyasıdır. PDF raporu `86230057_AllanazarAshyrjumayev_vize.pdf` adıyla depodadır. Öğrenci adı ve numarası mevcut; video bağlantısı henüz eklenmedi. PDF, öğrencinin düzenleyip gönderdiği sürümdür. Video bağlantısı, kontrol listesi ve gerçek cihaz kontrolleri teslim öncesinde doğrulanmalıdır.
+## Harici CSS ve JavaScript bağlantıları
 
-## Kaynaklar
+`index.html` dosyasının `<head>` bölümünde CSS şöyle bağlanır:
 
-Masal seçimi ve yeniden anlatımda kullanılan kaynaklar web sayfasının **Kaynaklar** bölümünde ve raporda belirtilmiştir. Hikâyeler kaynakların birebir aktarımı değildir; temel olaylar korunup korkutucu ayrıntılar sadeleştirilerek çocuklar için yeniden anlatılmıştır. Yapay zekâ desteği kullanıldığı raporda belirtilmiştir; teslim öncesinde kullanıcı metinlerin uygunluğunu gözden geçirmelidir.
+```html
+<link rel="stylesheet" href="style.css">
+```
 
-## Yapay zekâ desteği
+HTML'in sonunda JavaScript şu şekilde bağlanır:
 
-Kod yapısını oluşturma, JavaScript etkileşimlerini düzenleme, metinlerin genişletilmesi, SVG kapak çizimleri ve raporun yazım düzeni için ChatGPT desteği alındı. Chromium önizlemesiyle temel işlevler test edildi. Hikâyelerin öğrencinin diliyle son düzenlemesi, fiziksel cihaz testi ve sunumda anlatım proje sahibinin kontrolünü gerektirir.
+```html
+<script src="script.js" defer></script>
+```
 
-## Teslim notu
+- **HTML:** Başlık, menü, masal arşivi, kaynakça ve okuma penceresinin yapısını oluşturur.
+- **CSS:** Kâğıt tonları, Georgia başlıkları, kart düzeni, düğmeler ve `@media` ile ekran boyutuna uyarlamayı yönetir.
+- **JavaScript:** Masal verilerini işler; filtreleme, arama, favoriler, okundu durumu ve okuma penceresini çalıştırır.
+- `defer` sayesinde betik, HTML ayrıştırıldıktan sonra çalıştırılır.
 
-- GitHub deposunda `index.html`, PDF raporu, `main.tex`, `README.md` ve `main.tex` içindeki resim yollarını karşılayan `assets/` klasörü bulunmalıdır.
-- **MEBİS'e yalnızca son hâli verilmiş rapor PDF'i yüklenir.** ZIP veya HTML yüklenmez.
-- GitHub deposu ve YouTube bağlantısı rapor kapağına ve buraya eklenmelidir.
-- Teslimden önce bütün özellikler bilgisayar ve telefonda ayrıca sınanmalıdır.
+## Web sitesinin özellikleri
 
-**GitHub deposu:** https://github.com/ashyrjumayevallanazar-art/T-rk-masallar-derlemesi  
-**YouTube sunum videosu:** [Video kaydedilince eklenecek]
+- **Sekiz masal:** Dört Öğüt, Değirmenci ile Tilki, Fatmacık ile Yusufçuk, Keloğlan ve Altın Bülbül, Tuz Kadar Sevgi, Üç Turunçlar, Nardaniye Hanım ve Keloğlan Masalı (Bir Nohut).
+- **Arama:** Masal adında, açıklamasında, türünde ve hikâye metninde arama.
+- **Filtreleme:** Tümü, türler, Favorilerim ve Okuduklarım.
+- **Okuma penceresi:** Masal kapağı ve tam metni, önceki/sonraki masal, yazı boyutu değiştirme.
+- **Favoriler ve okundu kaydı:** Tarayıcının `localStorage` alanını kullanır. Bazı dosya önizleyicilerinde veya özel gizlilik ayarlarında kayıt kalıcı olmayabilir.
+- **Rastgele masal:** Tek tuşla sekiz hikâyeden birini açar.
+- **Duyarlı tasarım:** Geniş ekranda çok sütunlu, dar ekranda iki veya tek sütunlu kart yerleşimi.
+- **JavaScript kapalıyken okuma:** HTML'deki `<details>` ve `<summary>` öğelerinde sekiz masalın metnine ulaşılabilir.
+- **Kapak çizimleri:** Sekiz ayrı SVG illüstrasyonu; hazır stok görsel kullanılmadı.
 
-## Belgelenen haftalar
+## Kodun genel mantığı
 
-Raporda yalnızca 3. ve 4. haftaya ait kullanıcı tarafından sağlanan ekran görüntüleri ve açıklamaları yer almaktadır. Görseller `assets/` klasöründedir. Diğer haftalar için çalışma yapılmış gibi kayıt açılmamıştır. GitHub commit bağlantısı ve derse katılım/telafi bilgisi paylaşılmamıştır.
+`script.js` içinde `stories` dizisi masal bilgilerini tutar. `visibleStories()` arama ve kategori koşullarına göre listeyi süzer. `renderCards()` süzülmüş masalları kart hâlinde ekrana yerleştirir. `openStory()` ve `showStory()` seçilen hikâyeyi okuma penceresinde gösterir. `setFlag()` ve `persist()` favori/okundu bilgilerini günceller ve kaydetmeye çalışır.
+
+Harici dosyalara ayırma sırasında bu temel işlevler yeniden yazılmadı; daha önce tek HTML içinde bulunan stil ve betikler, bağlantıları değiştirilerek ayrı dosyalara taşındı.
+
+## Rapor ve önceki vize çalışması
+
+Depoda önceki vize çalışmasına ait PDF ve `main.tex` de tutulmaktadır. **Bu yeni ödev**, önceki PDF'yi değiştirmekten çok web sitesini üç dosyaya ayırmaya yöneliktir. PDF'de eski *içsel CSS/JS* düzeni anlatıldığı için yeni dosya yapısını görmek isteyenler bu README'yi ve `index.html` içindeki harici dosya bağlantılarını esas almalıdır.
+
+**Not:** `main.tex` içinde önceki rapora ait bazı ekran görüntülerine `assets/` yollarıyla başvurulur. Bu görüntüler olmadan kaynak dosyayı doğrudan yeniden derlemek mümkün olmayabilir; PDF raporunun kendisi depoda yer almaktadır.
+
+## Kullanılan teknolojiler
+
+HTML5, CSS3, JavaScript (ES6+), SVG veri adresleri ve tarayıcı `localStorage`. Harici çatı (framework), hazır CSS kütüphanesi veya çevrimiçi API kullanılmıyor.
+
+## Kaynak ve yapay zekâ açıklaması
+
+Masallar geleneksel anlatılardan yararlanılarak çocuklara uygun biçimde **yeniden anlatılmıştır**; kaynak sayfalardaki tam metinlerin birebir kopyası değildir. Kaynak bağlantıları web sitesinin **Kaynaklar** bölümünde ve vize raporunda bulunur.
+
+ChatGPT; HTML/CSS/JavaScript oluşturma ve düzenleme, kodları harici dosyalara ayırma, etkileşimleri kontrol etme, masal anlatılarını genişletme, SVG kapak taslakları ve rapor/README düzenleme aşamalarında kullanılmıştır. Projenin sunumunda kodların çalışma mantığını açıklamak ve son kullanıcı kontrolü proje sahibinin sorumluluğundadır.
+
+## Bağlantılar
+
+- **GitHub:** https://github.com/ashyrjumayevallanazar-art/T-rk-masallar-derlemesi
+- **YouTube sunumu:** Henüz eklenmedi; video hazırlandıktan sonra bağlantı eklenecek.
+
+---
+
+**Hazırlayan:** Allanazar Ashyrjumayev · **Öğrenci no:** 86230057
+
+**Yeni ödev teslimi:** GitHub deposu bağlantısını ilgili assignment alanına ayrıca eklemek gerekiyor.
